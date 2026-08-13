@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>&k chocolat Art Plate</title>
+    <meta
+      name="description"
+      content="チョコレートアートプレート販売・オーダーサイト"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- ファビコン -->
+    <link rel="icon" type="image/png" href="chocola.img/&k.png" />
+
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+
+    <!-- Googleフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- オリジナルCSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body class="home-page">
+    <div class="cover cover-home">
+      <header class="page-header wrapper">
+        <h1 class="align-center">
+          <a href="index.html"
+            ><img class="logo" src="chocola.img/logo.svg" alt="&kショコラHOME"
+          /></a>
+        </h1>
+        <nav style="position: relative">
+          <button class="btn-menu">Menu</button>
+          <ul class="main-nav font-english">
+            <li><a href="gallery-pricing.html">Gallery & Pricing</a></li>
+            <!-- 1番目に移動 -->
+            <li><a href="news.html">News</a></li>
+            <!-- 2番目に移動 -->
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </nav>
+      </header>
+      <h2 class="page-title font-english">
+        Celebrate with Chocolat Art Plate.
+      </h2>
+    </div>
+
+    <section class="about">
+      <h3 class="heading-large font-english">About &k</h3>
+
+      <!-- 導入の文章 -->
+      <p class="about-lead">
+        ショコラ・アート・プレートとは、”　食べて消える祝福のアート　”<br />
+        たとえば結婚20周年記念のご夫婦が初めてのデートで見た思い出の映画<br />
+        その時の感動を真っ白なお皿に<br />
+        艶やかなチョコレートで描きます<br />
+        「なつかしい」「憶えていてくれた」そのお気持ちで感動は更により深く刻まれます。<br />
+        貴方がこれからも大切な人と過ごしていく時間の、消えない想い出作りをお手伝いします。<br />
+      </p>
+
+      <!--作者紹介（箇条書き） -->
+      <ul class="about-features">
+        <li>
+          <strong>【完全オーダーメイド】</strong><br />
+          送っていただいた写真や画像を元に高カカオ(64%以上)を使用し、手描きで仕上げます。
+        </li>
+        <li>
+          <strong>【特別な日に】</strong><br />
+          誕生日や記念日のサプライズにはもちろん、推し活も盛り上がります。
+        </li>
+        <li>
+          <strong>【最高の思い出に】</strong><br />
+          「こんなの見たことない！」と笑顔で溢れる、忘れられない1日になります。
+        </li>
+      </ul>
+      <div class="creator-profile">
+        ■　■　■　作者紹介　■　■　■
+        <h4 class="creator-title font-english">Chocolat Artist</h4>
+        <p class="creator-name">
+          ＆ｋ <span class="creator-sub">(ando kei)</span>
+        </p>
+        <p class="creator-text">
+          ■概要■<br />
+          2007年より都内有名レストランでホール業務に携わるうちに、デザートプレートを見たお客様の笑顔に感動。
+          クオリティの追求に興味を持ち自ら描き始める。<br />
+          <br />
+          ■まごころスキル■ <br />
+
+          ショコラ・アート・プレート歴19年<br />
+          総制作数　23,000枚以上<br />
+          プロポーズ演出　100組以上<br />
+          誕生日記念日演出　星の数ほど<br />
+          他、ワークショップ開催・著名人オーダー・コラボ・レストラン外注等<br />
+        </p>
+      </div>
+
+      <div class="align-center">
+        <!-- 下記のリンク先ファイル名もスペースなしの英小文字に合わせます -->
+        <a class="btn" href="gallery-pricing.html">作品と値段を見てみる</a>
+      </div>
+    </section>
+    <footer class="page-footer">
+      <h3 class="heading-large font-english">Information</h3>
+      <table class="info">
+        <tr>
+          <th>住所</th>
+          <td>東京都港区六本木 0-0 ◯◯◯</td>
+        </tr>
+        <tr>
+          <th>電話</th>
+          <td>03-1111-XXXX</td>
+        </tr>
+        <tr>
+          <th>営業時間</th>
+          <td>10:00〜20:00</td>
+        </tr>
+        <tr>
+          <th>店休日</th>
+          <td>水曜</td>
+        </tr>
+      </table>
+      <div class="copyright">
+        <small>&copy; 2026 &k chocolata</small>
+      </div>
+    </footer>
+
+    <script>
+      const btn = document.querySelector(".btn-menu");
+      const nav = document.querySelector(".main-nav");
+
+      btn.addEventListener("click", () => {
+        nav.classList.toggle("open-menu");
+
+        // ボタンの文字が「Menu」だったら「Close」に変える
+        if (btn.innerHTML === "Menu") {
+          btn.innerHTML = "Close";
+        } else {
+          // 「Close」の時に押されたら元の「Menu」に戻す
+          btn.innerHTML = "Menu";
+        }
+      });
+    </script>
+  </body>
+</html>

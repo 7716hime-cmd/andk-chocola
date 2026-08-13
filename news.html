@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>news| &k chocolat Art Plate</title>
+        <meta name="description" content="チョコレートアートプレート販売・オーダーサイト">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- ファビコン -->
+        <link rel="icon" type="image/png" href="chocola.img/&k.png">
+
+    <!-- リセットCSS -->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+
+    <!-- Googleフォント -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
+    
+    <!-- オリジナルCSS -->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+        <div class="sub-cover cover-news">
+            <header class="page-header wrapper">
+                <h1 class="align-center">
+                             <a href="index.html"
+            ><img class="logo" src="chocola.img/logo.svg" alt="&kショコラHOME"
+          /></a>
+
+                </h1>
+                <nav>
+                      <button class="btn-menu">Menu</button>
+
+<ul class="main-nav font-english">
+  <li><a href="gallery-pricing.html">Gallery & Pricing</a></li> <!-- 1番目に移動 -->
+  <li><a href="news.html">News</a></li>                         <!-- 2番目に移動 -->
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="faq.html">FAQ</a></li>
+</ul>                </nav>
+            </header>
+            <h2 class="page-title font-english">News</h2>
+        </div>
+
+        <main class="wrapper news-contents">
+            <article class="post">
+                <header>
+                    <h2 class="post-title">カカオ2050年問題についての勉強会</h2>
+                    <div class="post-info">
+                        <ul class="post-cat">
+                            <li><a href="#">お店の紹介</a></li>
+                            <li><a href="#">イベント</a></li>
+                        </ul>
+                        <time class="post-date" datetime="2026-11-28">2026年11月26日</time>
+                    </div>
+                </header>
+                <img class="post-thumbnail" src="chocola.img/cacao.webp" alt="カカオ2050年問題">
+                <p>
+                    カカオ2050年問題とは、地球温暖化や異常気象などの気候変動により、2050年までに西アフリカなどの主要産地でカカオの栽培適地が大幅に減少し、将来的にチョコレートが手に入りにくくなったり高級品化したりする懸念のことです。
+                    
+                <p>
+                    カカオの持続可能な生産と環境保全は、世界のチョコレート供給を守るために不可欠な課題です。
+                    カカオ栽培は、不適切な拡大による森林破壊や気候変動の直撃を受けており、
+                    現在さまざまな保護活動や農法の転換が進められています。<br/>
+                    ＆ｋは、カカオをめぐる環境課題と、それに対する具体的な保全の取り組みに賛同しています。
+                
+                </p>
+                </p>
+                <p><h3>
+                    日時：11月26日（木）11時から12時まで<br>
+                    場所：本社内イベントスペース</h3>
+                </p>
+                <p>
+                    当日ご来場の方には、カカオ濃度の異なるチョコレートの食べ比べサービスと、プチギフトがございます。<br/>
+                    また、ご希望の方は事前予約で簡単なチョコペン文字の書き方ワークショップ（30分程度）に無料でご参加いただけます。
+                    定員に達した場合、お断りさせていただくこともございますので、お早めにお申し込みください。
+                    
+                </p>
+            </article>
+
+            <aside class="sidebar">
+                <h3 class="heading-medium font-english">Category</h3>
+                <ul class="side-menu">
+                    <li><a href="#">プレート提供レストラン紹介</a></li>
+                    <li><a href="#">期間限定プレート</a></li>
+                    <li><a href="#">イベント</a></li>
+                    <li><a href="#">お客様の感想とお写真</a></li>
+                </ul>
+
+                <h3 class="heading-medium font-english">Archives</h3>
+                <ul class="side-menu">
+                    <li><a href="#">2025年</a></li>
+                    <li><a href="#">2024年</a></li>
+                    <li><a href="#">2023年</a></li>
+                    <li><a href="#">2022年</a></li>
+                </ul>
+            </aside>
+        </main>
+
+        <footer class="page-footer">
+            <h3 class="heading-large font-english">Information</h3>
+            <table class="info">
+                <tr>
+                    <th>住所</th>
+                    <td>東京都港区六本木 0-0 ◯◯◯</td>
+                </tr>
+                <tr>
+                    <th>電話</th>
+                    <td>03-1111-XXXX</td>
+                </tr>
+                <tr>
+                    <th>営業時間</th>
+                    <td>10:00〜20:00</td>
+                </tr>
+                <tr>
+                    <th>店休日</th>
+                    <td>水曜</td>
+                </tr>
+            </table>
+            <div class="copyright">
+                <small>&copy; 2026 &k chocolata</small>
+            </div>
+        </footer>
+            <script>
+      const btn = document.querySelector(".btn-menu");
+      const nav = document.querySelector(".main-nav");
+
+      btn.addEventListener("click", () => {
+        nav.classList.toggle("open-menu");
+
+        // ボタンの文字が「Menu」だったら「Close」に変える
+        if (btn.innerHTML === "Menu") {
+          btn.innerHTML = "Close";
+        } else {
+          // 「Close」の時に押されたら元の「Menu」に戻す
+          btn.innerHTML = "Menu";
+        }
+      });
+    </script>
+  </body>
+</html>
+    </body>
+</html>

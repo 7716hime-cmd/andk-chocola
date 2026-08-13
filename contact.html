@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>Contact | &k chocolat Art Plate</title>
+    <meta
+      name="description"
+      content="チョコレートアートの作品一覧と料金のご案内です。"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- ファビコン -->
+    <link rel="icon" type="image/png" href="chocola.img/&k.png" />
+
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+
+    <!-- Googleフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- オリジナルCSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="sub-cover cover-contact">
+      <header class="page-header wrapper">
+        <h1 class="align-center">
+          <a href="index.html"
+            ><img class="logo" src="chocola.img/logo.svg" alt="&kショコラHOME"
+          /></a>
+        </h1>
+        <nav style="position: relative">
+          <button class="btn-menu">Menu</button>
+          <ul class="main-nav font-english">
+            <li><a href="gallery-pricing.html">Gallery & Pricing</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </nav>
+      </header>
+      <h2 class="page-title font-english">Contact</h2>
+    </div>
+    <main class="wrapper">
+      <main class="wrapper">
+        <section class="contact-form-section">
+          <p class="form-intro">
+            ショコラ＆kへのお問い合わせ・オーダーのご相談は、以下のフォームよりお気軽にご連絡ください。<br />
+            通常2営業日以内にご返信させていただいております。
+          </p>
+
+          <form
+            action="#"
+            method="post"
+            enctype="multipart/form-data"
+            class="contact-form"
+          >
+            <!-- ご注文者様情報 -->
+            <fieldset class="form-fieldset">
+              <legend class="fieldset-title">ご注文者様情報</legend>
+
+              <div class="form-group">
+                <label for="order-name"
+                  >氏名 <span class="required">必須</span></label
+                >
+                <input
+                  type="text"
+                  id="order-name"
+                  name="order-name"
+                  require圭
+                  placeholder="安堂　圭"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="order-address"
+                  >住所 <span class="required">必須</span></label
+                >
+                <input
+                  type="text"
+                  id="order-address"
+                  name="order-address"
+                  required
+                  placeholder="東京都港区六本木..."
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="order-tel"
+                  >電話番号 <span class="required">必須</span></label
+                >
+                <input
+                  type="tel"
+                  id="order-tel"
+                  name="order-tel"
+                  required
+                  placeholder="090-XXXX-XXXX"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="order-contact"
+                  >メールアドレス または LINEのID
+                  <span class="required">必須</span></label
+                >
+                <input
+                  type="text"
+                  id="order-contact"
+                  name="order-contact"
+                  required
+                  placeholder="example@email.com または line_id"
+                />
+              </div>
+            </fieldset>
+
+            <!-- お届け先情報 -->
+            <fieldset class="form-fieldset">
+              <legend class="fieldset-title">
+                お届け先情報
+                <span class="optional-note">※ご注文者様と同じなら入力不要</span>
+              </legend>
+
+              <div class="form-group">
+                <label for="delivery-name">氏名（または店舗名称）</label>
+                <input
+                  type="text"
+                  id="delivery-name"
+                  name="delivery-name"
+                  placeholder="なないろ よつば / 感動のレストラン"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="delivery-address">住所</label>
+                <input
+                  type="text"
+                  id="delivery-address"
+                  name="delivery-address"
+                  placeholder="神奈川県横浜市..."
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="delivery-tel">電話番号</label>
+                <input
+                  type="tel"
+                  id="delivery-tel"
+                  name="delivery-tel"
+                  placeholder="045-XXX-XXXX"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="delivery-email">メールアドレス</label>
+                <input
+                  type="email"
+                  id="delivery-email"
+                  name="delivery-email"
+                  placeholder="delivery@email.com"
+                />
+              </div>
+            </fieldset>
+
+            <!-- オーダー詳細情報 -->
+            <fieldset class="form-fieldset">
+              <legend class="fieldset-title">オーダー詳細</legend>
+
+              <div class="form-group">
+                <label for="use-date"
+                  >ご利用予定日時 <span class="required">必須</span></label
+                >
+                <input
+                  type="datetime-local"
+                  id="use-date"
+                  name="use-date"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label>ご希望の枚数 <span class="required">必須</span></label>
+                <div class="radio-group">
+                  <label class="radio-label"
+                    ><input type="radio" name="quantity" value="1" required />
+                    1枚</label
+                  >
+                  <label class="radio-label"
+                    ><input type="radio" name="quantity" value="2" /> 2枚</label
+                  >
+                  <label class="radio-label"
+                    ><input type="radio" name="quantity" value="3+" />
+                    3枚以上</label
+                  >
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>ご利用シーン <span class="required">必須</span></label>
+                <div class="radio-group scene-group">
+                  <label class="radio-label"
+                    ><input
+                      type="radio"
+                      name="scene"
+                      value="birthday"
+                      required
+                    />
+                    誕生日</label
+                  >
+                  <label class="radio-label"
+                    ><input type="radio" name="scene" value="anniversary" />
+                    記念日</label
+                  >
+                  <label class="radio-label"
+                    ><input type="radio" name="scene" value="celebration" />
+                    お祝い</label
+                  >
+                  <label class="radio-label"
+                    ><input type="radio" name="scene" value="fandom" />
+                    推し活</label
+                  >
+                  <label class="radio-label"
+                    ><input type="radio" name="scene" value="gratitude" />
+                    感謝</label
+                  >
+                  <div class="scene-other">
+                    <label class="radio-label"
+                      ><input type="radio" name="scene" value="other" />
+                      その他</label
+                    >
+                    <input
+                      type="text"
+                      name="scene-other-text"
+                      placeholder="具体的にご記入ください"
+                      class="input-inline"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="episode"
+                  >お贈りしたい方とのエピソード、その他ご質問があればご記入ください</label
+                >
+                <textarea
+                  id="episode"
+                  name="episode"
+                  rows="5"
+                  placeholder="（例：昔から一緒にスキューバダイビングをしていた仲間の結婚祝いです。二人と共通の想い出ある海の写真を選びました！）"
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="upload-files"
+                  >リクエストしたい画像（3枚まで添付可能）</label
+                >
+                <div class="file-upload-wrapper">
+                  <input
+                    type="file"
+                    id="upload-files"
+                    name="upload-files[]"
+                    accept="image/*"
+                    multiple
+                  />
+                  <p class="file-hint">
+                    ※複数選択、またはタップして画像を最大3枚まで選べます。
+                  </p>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="form-submit">
+              <button type="submit" class="btn-submit">
+                送信内容を確認する
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- SNS連携エリア -->
+        <section class="sns">
+          <div class="sns-item align-center">
+            <h3 class="heading-medium font-english">Instagram</h3>
+            <p class="sns-text">
+              最新の作品や活動状況はInstagramでも発信しています。
+            </p>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener"
+              class="btn-sns"
+              >@a.n.d__k</a
+            >
+          </div>
+        </section>
+      </main>
+    </main>
+
+    <!-- フッター -->
+    <footer class="page-footer">
+      <!-- 💡もしメインエリアと重複する場合は、この中のテーブルは削除してもOKです -->
+      <h3 class="heading-large font-english">Information</h3>
+      <table class="info">
+        <tr>
+          <th>住所</th>
+          <td>東京都港区六本木 0-0 ◯◯◯</td>
+        </tr>
+        <tr>
+          <th>電話</th>
+          <td>03-1111-XXXX</td>
+        </tr>
+        <tr>
+          <th>営業時間</th>
+          <td>10:00〜20:00</td>
+        </tr>
+        <tr>
+          <th>店休日</th>
+          <td>水曜</td>
+        </tr>
+      </table>
+      <div class="copyright">
+        <small>&copy; 2026 &k chocolat</small>
+      </div>
+    </footer>
+
+    <!-- Luminous Lightbox JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.3.2/luminous.min.js"></script>
+
+    <!-- 自分が作った JS ファイルを読み込む -->
+    <script src="script.js"></script>
+  </body>
+</html>

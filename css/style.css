@@ -1,0 +1,893 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   1. 共通設定（全体のデザイン・フォント・ボタン）
+   ========================================================================== */
+html {
+  font-size: 100%;
+}
+body {
+  font-family:
+    "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", sans-serif;
+  line-height: 1.7;
+  color: #432;
+  background-color: #fff;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+iframe {
+  width: 100%;
+}
+
+/* 共通レイアウト */
+.wrapper {
+  max-width: 1120px;
+  margin: auto;
+  padding: 0 1.5rem;
+}
+.align-center {
+  text-align: center;
+}
+
+/* 見出し */
+.font-english {
+  font-family: "Philosopher", sans-serif;
+  font-weight: normal;
+}
+.page-title,
+.heading-large,
+.heading-medium {
+  font-size: 3rem;
+  text-align: center;
+}
+.page-title {
+  margin-top: 2rem;
+  line-height: 1.4;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+.heading-large {
+  margin-bottom: 1rem;
+}
+
+/* ボタン（スモーキーピンク） */
+.btn {
+  display: inline-block;
+  font-size: 1.5rem;
+  background-color: #d4a5a5;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  transition: 0.5s;
+  font-weight: 500;
+}
+.btn:hover {
+  background-color: #c39797;
+}
+
+/* ==========================================================================
+   2. ヘッダー ＆ メニュー（スマホ版デフォルト）
+   ========================================================================== */
+.page-header {
+  padding-top: 0.5rem;
+}
+.logo {
+  width: 210px;
+}
+
+/* メニューを開閉するボタン（Menu / Close） */
+.btn-menu {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: 1px solid #4a3b32;
+  color: #4a3b32;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  z-index: 110; /* メニューより上に配置 */
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Philosopher", sans-serif;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    border-color 0.3s;
+}
+.btn-menu:hover {
+  background-color: #4a3b32;
+  color: #fff;
+}
+
+/* メニューを引き出す親要素 */
+.main-nav {
+  width: 0;
+  position: absolute;
+  top: 55px;
+  right: 0;
+  overflow: hidden;
+  z-index: 100;
+  border-radius: 4px;
+  background-color: rgba(74, 59, 50, 0.9);
+  transition:
+    width 0.5s ease,
+    opacity 0.5s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+.main-nav.open-menu {
+  width: 180px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.main-nav li {
+  text-align: center;
+  margin: 1.2rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.main-nav li:last-child {
+  border-bottom: none;
+}
+.main-nav a {
+  display: block;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  transition: color 0.3s;
+}
+.main-nav a:hover {
+  color: #d4a5a5;
+}
+
+/* ==========================================================================
+   3. 各ページ固有のスタイル（ヘッダー背景など）
+   ========================================================================== */
+/* ヘッダーカバー画像（共通設定） */
+.cover,
+.sub-cover {
+  background-size: cover;
+  background-position: center bottom;
+  height: 528px;
+}
+
+/* 各ページの背景画像指定 */
+.cover-home {
+  background-image: url("../chocola.img/top2.webp");
+  height: 800px; /* HOMEだけ高くする */
+}
+.cover-menu {
+  background-image: url("../chocola.img/cover-menu-s.webp");
+}
+.cover-news {
+  background-image: url(../chocola.img/cover-news-s.webp);
+}
+.cover-contact {
+  background-image: url(../chocola.img/cover-contact-s.webp);
+}
+.cover-faq {
+  background-image: url("../chocola.img/cover-faq-s.webp");
+}
+
+/* --- HOME ページ --- */
+.about {
+  max-width: 736px;
+  padding: 0 1.5rem;
+  margin: 3rem auto 0;
+}
+.about p {
+  margin-bottom: 3rem;
+}
+.about-lead {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+.about-features {
+  list-style: none;
+  padding: 0;
+  max-width: 500px;
+  margin: 0 auto 3rem;
+}
+.about-features li {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+.about-features strong {
+  color: #845;
+}
+
+/* --- GALLERY ページ --- */
+.grid {
+  display: grid;
+  gap: 2rem 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+  max-width: 88%; /* スマホ版：写真をコンパクトに */
+  margin: 0 auto;
+}
+.item img {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 16px;
+}
+.item p {
+  font-size: 0.875rem;
+}
+
+/* --- NEWS ページ --- */
+.post {
+  margin-bottom: 3rem;
+}
+.post-title {
+  font-weight: normal;
+  margin-bottom: 1.25rem;
+}
+.post-info {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.post-cat {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+}
+.post-cat a {
+  color: #432;
+  background-color: #faf7f0;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+}
+.post-cat a:hover {
+  background-color: #c9c2bc;
+}
+.post-date {
+  font-size: 0.875rem;
+}
+.post-thumbnail {
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+}
+.post p {
+  margin-bottom: 1.5rem;
+  line-height: 2;
+}
+.side-menu {
+  list-style: none;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.side-menu li {
+  border-bottom: 1px solid #c9c2bc;
+}
+.side-menu a {
+  color: #432;
+  display: block;
+  padding: 1rem;
+}
+.side-menu a:hover {
+  color: rgb(171, 113, 162);
+}
+
+/* --- CONTACT ページ --- */
+.location {
+  margin-bottom: 3.5rem;
+}
+.location-info {
+  margin-bottom: 2rem;
+}
+.email {
+  max-width: 916px;
+  background-color: #faf7f0;
+  border-radius: 48px;
+  padding: 1.5rem 2.5rem 2.5rem;
+  margin: 0 auto 2rem;
+}
+.email p {
+  margin: 1rem 0 2rem;
+}
+.sns-item {
+  margin-bottom: 2rem;
+}
+.sns-item .heading-medium {
+  margin-bottom: 0.5rem;
+}
+.sns-youtube {
+  aspect-ratio: 16/9;
+}
+.sns-youtube iframe {
+  height: 100%;
+}
+
+/* --- FAQ アコーディオン --- */
+.faq-list {
+  max-width: 736px;
+  margin: 0 auto;
+}
+.accordion-item {
+  border-bottom: 1px solid #ddd;
+}
+.accordion-question {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1.25rem 2.5rem 1.25rem 0;
+  font-size: 1.1rem;
+  font-family: inherit;
+  color: #432;
+  position: relative;
+  line-height: 1.6;
+}
+.accordion-question::after {
+  content: "▼";
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  color: #c39797;
+  transition: transform 0.3s;
+}
+.accordion-question.is-open::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+.accordion-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.accordion-answer.is-open {
+  max-height: 300px;
+}
+.accordion-answer p {
+  padding: 0 0.5rem 1.25rem;
+  color: #666;
+  line-height: 1.8;
+}
+.label-q,
+.label-a {
+  display: inline-block;
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+.label-q {
+  color: #c39797;
+}
+.label-a {
+  color: #432;
+}
+
+/* Lightbox矢印常時表示 */
+.lb-nav a.lb-prev,
+.lb-nav a.lb-next {
+  opacity: 0.7 !important;
+}
+.lb-nav a.lb-prev:hover,
+.lb-nav a.lb-next:hover {
+  opacity: 1 !important;
+}
+
+/* ==========================================================================
+   4. フッター共通
+   ========================================================================== */
+.page-footer {
+  /* 🌸 スモーキーピンク（金箔入り）の foo.webp を背景に設定 */
+  background: url("../chocola.img/foo.webp") no-repeat center center;
+  background-size: cover;
+  padding-top: 4rem;
+  color: #4a3b32; /* 住所などの文字を上品で読みやすい深みブラウンに */
+}
+.info {
+  width: 100%;
+  max-width: 544px;
+  margin: auto;
+  padding: 0 1.5rem;
+  border-spacing: 0;
+}
+/* フッターの「Information」という見出しの文字色と位置をキープ */
+.page-footer .heading-large,
+.page-footer .heading-medium {
+  color: #4a3b32;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.info th,
+.info td {
+  /* 住所テーブルの区切り線をピンクに馴染む上品なブラウンに */
+  border-bottom: 1px solid rgba(74, 59, 50, 0.2);
+}
+.info th {
+  text-align: left;
+  font-weight: bold; /* 「住所」「電話」の文字を少しハッキリと */
+  padding: 1rem;
+}
+.info td {
+  padding: 1rem 0;
+}
+.copyright {
+  /* 💡 文字は残したまま、黒い背景だけを「透明」にして画像を一番下まで見せます */
+  background-color: transparent;
+  text-align: center;
+  padding: 3rem 0 2rem;
+  margin-top: 4rem;
+
+  /* 💡 スモーキーピンクの上でもコピーライトの文字がはっきり読めるように濃い色に設定 */
+  color: #4a3b32;
+  font-size: 1.2rem; /* 小さすぎず、ダサくならない綺麗なサイズ */
+  font-weight: bold; /* パッと見て認識しやすいようにほんのり太字に */
+  letter-spacing: 0.05em;
+} /* ==========================================================================
+   5. デスクトップ版（画面幅800px以上のパソコン用設定）
+   ========================================================================== */
+@media (min-width: 800px) {
+  /* 💡 ヘッダーのレイアウト（ロゴを左上、Menuボタンを右上に引き離す） */
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+  }
+  .page-header h1 {
+    text-align: left !important;
+    margin: 0;
+  }
+  .page-header .btn-menu {
+    position: absolute;
+    top: 12px;
+    right: 1.5rem;
+  }
+  .page-header .main-nav {
+    position: absolute;
+    top: 55px;
+    right: 1.5rem;
+  }
+
+  /* フォントサイズ・高さのPC用上書き */
+  .page-title {
+    font-size: 5rem;
+  }
+  .heading-large {
+    font-size: 4rem;
+  }
+  .post-title {
+    font-size: 2rem;
+  }
+  .sub-cover {
+    height: 400px;
+    margin-bottom: 6rem;
+  }
+
+  /* 💡 【最重要】PC版背景画像をここで確実に上書き適用する */
+  .cover-home {
+    background-image: url("../chocola.img/top1.webp") !important;
+  }
+  .cover-menu {
+    background-image: url("../chocola.img/cover-menu-l.webp") !important;
+  }
+  .cover-news {
+    background-image: url("../chocola.img/cover-news-l.webp") !important;
+  }
+  .cover-contact {
+    background-image: url("../chocola.img/cover-contact-l.webp") !important;
+  }
+  .cover-faq {
+    background-image: url("../chocola.img/cover-faq-l.webp") !important;
+  }
+
+  /* HOME */
+  .about {
+    margin: 4rem auto 0;
+  }
+
+  /* GALLERY */
+  .grid {
+    gap: 3rem 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 100%;
+  }
+  .item p {
+    font-size: 1rem;
+  }
+
+  /* NEWS */
+  .news-contents {
+    display: flex;
+    justify-content: space-between;
+  }
+  .post {
+    width: 70%;
+  }
+  .sidebar {
+    width: 22%;
+  }
+  .sidebar .heading-medium {
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  /* CONTACT */
+  .location {
+    display: flex;
+    gap: 2rem;
+  }
+  .location-info {
+    width: 32%;
+  }
+  .location-info .info th {
+    padding-left: 2rem;
+  }
+  .location-map {
+    width: 64%;
+  }
+  .email {
+    margin-bottom: 4rem;
+  }
+  .sns {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 0;
+  }
+  .sns-item {
+    flex: 1;
+  }
+
+  /* フッター */
+  .page-footer {
+    padding-top: 5rem;
+  }
+  .info th {
+    padding-left: 2.5rem;
+  }
+}
+
+/* ==========================================================================
+   6. トップページ（index.html）限定のメニューボタン色変更
+   ========================================================================== */
+.home-page .btn-menu {
+  color: #fff;
+  border-color: #fff;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+}
+.home-page .btn-menu:hover {
+  background-color: #fff;
+  color: #4a3b32;
+}
+/* ==========================================================================
+   トップページ（index.html）作者紹介のスタイル（センター寄せ版）
+   ========================================================================== */
+.creator-profile {
+  max-width: 500px;
+  margin: 4rem auto 4rem; /* 上下の要素との間隔 */
+  padding: 2rem;
+  background-color: #faf7f0; /* 優しいオフホワイト */
+  border-radius: 16px; /* ギャラリーに合わせた丸み */
+  text-shadow: none; /* 文字の影をリセット */
+
+  /* 💡 追加：ボックス内のすべての要素をセンターに寄せる */
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(74, 59, 50, 0.05);
+}
+
+.creator-title {
+  font-size: 1.5rem;
+  color: #c39797; /* スモーキーピンク */
+  margin-bottom: 0.5rem;
+}
+
+.creator-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #432; /* 焦げ茶 */
+  margin-bottom: 1.5rem;
+}
+
+.creator-sub {
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #888;
+}
+
+.creator-text {
+  font-size: 0.95rem;
+  line-height: 1.9; /* 行間を少し広げて読みやすく */
+  color: #543; /* 柔らかいブラウン */
+
+  /* 💡 修正：justify（両端揃え）から center（中央寄せ）に変更 */
+  text-align: center;
+}
+/* ==========================================================================
+   ギャラリーページ：動画埋め込みのスタイル
+   ========================================================================== */
+.video-container {
+  max-width: 736px; /* アコーディオンやAboutと同じ上品な横幅に制限 */
+  margin: 5rem auto; /* 上下の要素（ギャラリーとフッター）との間にたっぷり余白を作る */
+  text-align: center;
+}
+
+.video-container video {
+  width: 100%; /* 画面幅に合わせて自動縮小 */
+  max-height: 450px; /* 縦に長くなりすぎないようにストッパーをかける */
+  border-radius: 16px; /* ギャラリーの写真に合わせて角を丸くする */
+  box-shadow: 0 4px 20px rgba(74, 59, 50, 0.08); /* 軽い影をつけて高級感を出す */
+  background-color: #000; /* 動画読み込み前の背景を黒にして引き締める */
+  object-fit: contain; /* 動画の比率を崩さずに枠内に綺麗に収める */
+}
+/* ==========================================================================
+   動画タイトルのサイズ調整
+   ========================================================================== */
+.video-title {
+  font-size: 1.3rem; /* ドカンと大きくならない、ちょうどいいサイズ */
+  font-weight: bold;
+  color: #432; /* サイト共通の優しい焦げ茶 */
+  text-align: center;
+  margin-bottom: 2rem; /* 文字と動画プレイヤーの間のすき間 */
+  letter-spacing: 0.05em; /* 文字の間隔を少しあけて読みやすく */
+}
+
+/* スマホ画面（幅768px以下）の時は文字をもう一回り小さくしてはみ出しを防止 */
+@media (max-width: 768px) {
+  .video-title {
+    font-size: 1.05rem; /* スマホで見ても太すぎてうるさくならないサイズ */
+    padding: 0 1rem; /* 左右に少し余白を作って画面端に張り付くのを防ぐ */
+  }
+}
+/* ==========================================================================
+   【確定版】動画プレイヤーのクリックバグ完全修正 ＆ スタイル
+   ========================================================================== */
+.video-container {
+  position: relative !important;
+  z-index: 1000 !important; /* 💡 数値を極限まで上げてLuminousの枠より前に出す */
+}
+
+.video-container video {
+  position: relative !important;
+  z-index: 1010 !important; /* 💡 最前面に引っ張り出して、ボタンを確実に押せるようにする */
+  pointer-events: auto !important; /* 💡 マウスやタップの反応を100%強制的に受け付ける */
+}
+
+/* 音声なしの注意書きデザイン */
+.video-note {
+  font-size: 0.85rem;
+  color: #887a70;
+  text-align: center;
+  margin-top: 0.8rem;
+  letter-spacing: 0.05em;
+}
+/* ==========================================
+   Contact Form Styles (Sophisticated Style)
+   ========================================== */
+.contact-form-section {
+  max-width: 650px; /* 横幅は元の見やすい幅に戻しました */
+  margin: 30px auto 50px;
+  padding: 0 15px;
+  font-family: inherit;
+}
+
+.form-intro {
+  text-align: center;
+  line-height: 1.7;
+  font-size: 14px; /* 本文の文字サイズにピタッと合わせました */
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  background: #fdfbf7;
+  padding: 30px 25px;
+  border-radius: 6px;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.04);
+  border: 1px solid #f2eae0;
+}
+
+.form-fieldset {
+  border: none;
+  margin: 0 0 30px 0;
+  padding: 0;
+}
+
+.form-fieldset:last-of-type {
+  margin-bottom: 10px;
+}
+
+.fieldset-title {
+  width: 100%;
+  font-size: 16px; /* 「ご注文者様情報」などの見出しを小さく上品に */
+  font-weight: bold;
+  color: #4a3b32;
+  border-bottom: 1px solid #e8ded1;
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+}
+
+.optional-note {
+  font-size: 12px; /* ※ご注文者様と同じなら入力不要、の文字 */
+  font-weight: normal;
+  color: #88786c;
+  margin-left: 6px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  font-size: 13px; /* 「氏名」「住所」などの文字を小さく華奢に！ */
+  margin-bottom: 8px;
+  color: #4a3b32;
+}
+
+.form-group .required {
+  background: #e2b2b8;
+  color: #fff;
+  font-size: 11px; /* 「必須」のピンクバッジを小さく上品に */
+  padding: 1px 4px;
+  border-radius: 2px;
+  margin-left: 5px;
+  vertical-align: middle;
+  font-weight: normal;
+}
+
+/* 入力ボックスの中の文字と薄いヒント文字（プレースホルダー）を小さく */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="datetime-local"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #dcd1c4;
+  border-radius: 4px;
+  font-size: 13px; /* 入力する文字や、例（山田花子）の文字を13pxに縮小！ */
+  color: #333;
+  background-color: #fff;
+  font-family: inherit;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+
+/* 入力前の薄い文字（プレースホルダー）のサイズも確実に固定 */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  font-size: 13px;
+  color: #aaa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #d4af37;
+  box-shadow: 0 0 4px rgba(212, 175, 55, 0.2);
+}
+
+/* ラジオボタン（選択ボタン）の文字サイズ */
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 4px 0;
+}
+
+.radio-label {
+  display: inline-flex !important;
+  align-items: center;
+  font-weight: normal !important;
+  font-size: 13px !important; /* ラジオボタンの文字も13pxに統一 */
+  cursor: pointer;
+  color: #4a3b32;
+}
+
+.radio-label input[type="radio"] {
+  margin-right: 5px;
+  accent-color: #e2b2b8;
+}
+
+/* 利用シーンのその他エリア */
+.scene-group {
+  align-items: center;
+}
+
+.scene-other {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.input-inline {
+  width: 160px !important;
+  padding: 6px 10px !important;
+  font-size: 12px !important;
+}
+
+/* 画像添付エリア */
+.file-upload-wrapper {
+  background: #fff;
+  border: 1px dashed #dcd1c4;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.file-upload-wrapper input[type="file"] {
+  font-size: 12px;
+  color: #555;
+}
+
+.file-hint {
+  font-size: 11px;
+  color: #888;
+  margin-top: 4px;
+}
+
+/* 送信ボタンの文字サイズ */
+.form-submit {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.btn-submit {
+  background: #d4af37;
+  color: #fff;
+  border: none;
+  padding: 12px 35px;
+  font-size: 14px; /* ボタンの文字も少し小さくして上品に */
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
+  box-shadow: 0 3px 8px rgba(212, 175, 55, 0.15);
+}
+
+.btn-submit:hover {
+  background: #c5a028;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 12px rgba(212, 175, 55, 0.25);
+}
+
+/* SNSエリアの調整 */
+.sns {
+  margin: 50px auto 30px;
+  padding-top: 35px;
+  border-top: 1px dashed #dcd1c4;
+}
+
+.sns-text {
+  font-size: 14px;
+  margin: 12px 0;
+  color: #666;
+}
+
+.btn-sns {
+  display: inline-block;
+  background: #e2b2b8;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 13px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.btn-sns:hover {
+  background: #d39da4;
+  transform: translateY(-1px);
+}
